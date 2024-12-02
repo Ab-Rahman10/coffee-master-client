@@ -18,13 +18,16 @@ const SignUp = () => {
         const creationTime = result.user.metadata.creationTime;
         const newUser = { name, email, creationTime };
         // save new user info in database
-        fetch("http://localhost:5001/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        })
+        fetch(
+          "https://coffee-master-server-l0w6bzmwv-ab-rahmans-projects.vercel.app/users",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(newUser),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

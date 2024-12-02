@@ -5,9 +5,12 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     coffee;
 
   const handleDelete = (coffeeId) => {
-    fetch(`http://localhost:5001/coffees/${coffeeId}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://coffee-master-server-l0w6bzmwv-ab-rahmans-projects.vercel.app/coffees/${coffeeId}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

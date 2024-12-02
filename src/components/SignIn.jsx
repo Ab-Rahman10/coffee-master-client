@@ -18,13 +18,16 @@ const SignIn = () => {
         const userInfo = { email, lastSignInTime };
 
         // detect the last sign in time
-        fetch("http://localhost:5001/users", {
-          method: "PATCH",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(userInfo),
-        })
+        fetch(
+          "https://coffee-master-server-l0w6bzmwv-ab-rahmans-projects.vercel.app/users",
+          {
+            method: "PATCH",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userInfo),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
